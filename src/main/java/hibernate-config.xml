@@ -7,7 +7,7 @@
 
     <!-- a SessionFactory instance listed as /jndi/name -->
     <session-factory>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/ism2022</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/Hibernet_Demo</property>
 		<property name="connection.driver_class">org.postgresql.Driver</property>
 		<property name="connection.username">postgres</property>
 		<property name="connection.password">123456789</property>
@@ -17,7 +17,7 @@
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
 		
-		<mapping  resource="role.hbm.xml"/> 
+		<mapping  resource="role-hbm.xml"/> 
 	</session-factory>
 
 </hibernate-configuration>
