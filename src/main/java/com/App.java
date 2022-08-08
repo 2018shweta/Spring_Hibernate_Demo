@@ -69,7 +69,7 @@ Transaction tx = session.beginTransaction();
 		if (role == null) {
 			System.out.println("Invalid id please try again!!!");
 		} else {
-			System.out.println("===Role Detail=====");
+			System.out.println("Role Detail");
 			System.out.println(role.getRoleId());
 			System.out.println(role.getRoleName());
 		}
@@ -95,6 +95,29 @@ Transaction tx = session.beginTransaction();
 		}
 
 	}
+	
+	void update() {
+		Session session = factory.openSession();
+		Scanner scr =new Scanner(System.in);
+		System.out.println("Enter roleId");
+		int roleId=scr.nextInt();
+		RoleBean role=session.get(RoleBean.class,roleId);
+		if(role==null)
+		{
+		}
+		else {
+			
+			System.out.println("Enter you want to change name");
+			String roleName=scr.next();
+			Transaction tx = session.beginTransaction();
+			
+			role.setRoleName(roleName);
+			session.update(role);
+			tx.commit();
+		}
+		
+		
+	}
 
 	public static void main(String[] args) {
 		int choice = 0;
@@ -102,7 +125,7 @@ Transaction tx = session.beginTransaction();
 		App app = new App();
 
 		while (true) {
-			System.out.println("\n0 for exit\n1 for add\n2 for list all roles\n3 for view\n4 for delete role");
+			System.out.println("\n1for exit\n2for add\n3for list all roles\n4 for view\n5 for delete role\n6 for update");
 			System.out.println("Enter choice....");
 
 			Scanner scr = new Scanner(System.in);
@@ -110,20 +133,23 @@ Transaction tx = session.beginTransaction();
 			choice = scr.nextInt();
 
 			switch (choice) {
-			case 0:
-				System.exit(0);
 			case 1:
+				System.exit(0);
+			case 2:
 				app.addRole();
 				break;
-			case 2:
+			case 3:
 				app.getAllRoles();
 				break;
-			case 3:
+			case 4:
 				app.getRoleById();
 				break;
-			case 4:
+			case 5:
 				app.deleteRoleById();
 				break;
+			case 6:
+			app.update();
+			break;
 			}// switch
 		} // while
 	}//main
