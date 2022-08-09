@@ -19,6 +19,7 @@
 		
 		<mapping  resource="role-hbm.xml"/> 
 		<mapping  resource="user-hbm.xml"/>
+		<mapping  resource="vehicle-hbm.xml"/>
 	</session-factory>
 
 </hibernate-configuration>

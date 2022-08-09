@@ -27,11 +27,11 @@ public class UserRole {
 		user.setLastName(sc.next());
 		user.setEmail(sc.next());
 		user.setPassword(sc.next());
-		System.out.println("Enter userId??");
-		int userId=sc.nextInt();
+		System.out.println("Enter roleId??");
+		int roleId=sc.nextInt();
 		
 		
-		RoleBean role=session.get(RoleBean.class, userId);
+		RoleBean role=session.get(RoleBean.class, roleId);
 		
 		user.setRole(role);
 		
