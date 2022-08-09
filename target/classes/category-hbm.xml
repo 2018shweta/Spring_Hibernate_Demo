@@ -22,7 +22,9 @@
 		
 		</key>
 	
-	<many-to-many class="com.bean.ProductBean"></many-to-many>
+	<many-to-many class="com.bean.ProductBean">
+	<column name="productId"/>
+	</many-to-many>
 	
 	
 	</set>

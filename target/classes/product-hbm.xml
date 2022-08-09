@@ -20,7 +20,9 @@
 			<key>
 			<column name="productId"/>
 			</key>
-	<many-to-many class="com.bean.CategoryBean"></many-to-many>
+	<many-to-many class="com.bean.CategoryBean">
+	<column name="categoryId" />
+	</many-to-many>
 	</set>
 	
 	</class>
